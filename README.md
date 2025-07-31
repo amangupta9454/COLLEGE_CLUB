@@ -170,7 +170,7 @@ http://localhost:5173
     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
         <div style="flex: 1 1 280px; background-color: #fff; padding: 15px; text-align: center; border: 1px solid #ddd;">
             <h3 style="color: #333; font-size: 20px; font-weight: bold; margin: 0 0 10px;">Home Page</h3>
-            <img src="hhttps://res.cloudinary.com/dgtyqhtor/image/upload/v1753930116/Screenshot_2025-07-31_081630_zerrg1.png" alt="Home Page" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+            <img src="https://res.cloudinary.com/dgtyqhtor/image/upload/v1753930116/Screenshot_2025-07-31_081630_zerrg1.png" alt="Home Page" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
         </div>
         <div style="flex: 1 1 280px; background-color: #fff; padding: 15px; text-align: center; border: 1px solid #ddd;">
             <h3 style="color: #333; font-size: 20px; font-weight: bold; margin: 0 0 10px;">About Us</h3>
