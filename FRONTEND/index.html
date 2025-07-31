@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="tech fusion, hiet club,HIET TECHNICAL CLUB,HIET,Hi-tech ghaziabad,hi-tech ghaziabad,HIET-GHAZIABAD, ghaziabad technical club,Hi-tech institute of engineering and technology ghaziabad technical club">
+    <meta name="description" content="Explore innovation and technology with Tech Fusion! Join our vibrant community of tech enthusiasts, innovators, and achievers. From coding challenges to tech talks and collaborative projects, we empower students to learn, build, and excel. "/>
+    <link rel="icon" type="image" href="./src/assets/icon.png" />
+    <title>Welcome To Tech Fusion</title>
+  </head>
+  <body>
+    <div id="root"></div> 
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          document.title = 'Comeback 😞';
+        } else {
+          document.title = 'Welcome To Tech Fusion';
+        }
+      });
+    </script>
+  </body>
+</html>
