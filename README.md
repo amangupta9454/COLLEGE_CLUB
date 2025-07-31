@@ -161,3 +161,24 @@ http://localhost:5173
                    <h2 id="creator">👨‍💻 Created By</h2> 
                    <p><strong>Aman Gupta</strong><br>B.Tech 3rd year Student | HIET Ghaziabad<br>Passionate about building secure and scalable full-stack applications 🧑‍💻</p>
                     <p align="center">⭐ If you found this project helpful, give it a star!</p>
+                    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+    <hr style="border: 1px solid #ddd; margin: 20px 0;">
+    <h2 id="screenshots" style="color: #4CAF50; font-size: 28px; font-weight: bold; margin-bottom: 20px;">📸 Screenshots</h2>
+    <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
+        Explore the interface of Your AI-Powered Career Companion through the screenshots below, showcasing key features like the Home Page, Resume Builder, and Email Generator.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+        <div style="flex: 1 1 280px; background-color: #fff; padding: 15px; text-align: center; border: 1px solid #ddd;">
+            <h3 style="color: #333; font-size: 20px; font-weight: bold; margin: 0 0 10px;">Home Page</h3>
+            <img src="hhttps://res.cloudinary.com/dgtyqhtor/image/upload/v1753930116/Screenshot_2025-07-31_081630_zerrg1.png" alt="Home Page" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+        </div>
+        <div style="flex: 1 1 280px; background-color: #fff; padding: 15px; text-align: center; border: 1px solid #ddd;">
+            <h3 style="color: #333; font-size: 20px; font-weight: bold; margin: 0 0 10px;">About Us</h3>
+            <img src="https://res.cloudinary.com/dgtyqhtor/image/upload/v1753930116/Screenshot_2025-07-31_081653_xkfy2b.png" alt="Resume Builder" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+        </div>
+        <div style="flex: 1 1 280px; background-color: #fff; padding: 15px; text-align: center; border: 1px solid #ddd;">
+            <h3 style="color: #333; font-size: 20px; font-weight: bold; margin: 0 0 10px;">Contact Us</h3>
+            <img src="https://res.cloudinary.com/dgtyqhtor/image/upload/v1753930116/Screenshot_2025-07-31_081643_rsmokr.png" alt="Email Generator" style="max-width: 100%; height: auto; border: 1px solid #ddd;">
+        </div>
+    </div>
+</div>
