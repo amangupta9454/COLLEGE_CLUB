@@ -4,7 +4,7 @@
 <p align="center" style="font-size: 16px;">
  Tech Fusion, HIET Ghaziabad’s technical club, fosters innovation and skill-building through coding challenges, tech talks, collaborative projects, and workshops on AI and IoT. We connect tech enthusiasts to learn, create, and excel in a dynamic community.
 </p>
-<li><a href="https://agrifarmio.netlify.app/">LIVE DEMO</a></li>
+<li><a href="https://techfusion-hiet.netlify.app/">LIVE DEMO</a></li>
 
 <hr>
 
