@@ -64,6 +64,7 @@ TECH FUSION/
 │       │   ├── About.jsx
 │       │   ├── Contact.jsx
 │       │   ├── Navbar.jsx
+│       │   ├── Events.jsx
 
 </pre>
 

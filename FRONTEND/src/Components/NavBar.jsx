@@ -21,7 +21,11 @@ const NavBar = () => {
         )}
       </div>
       <ul className={`md:flex ${isMobile ? "flex flex-col space-y-2 absolute top-16 left-1/2 transform -translate-x-1/2 cursor-pointer bg-gradient-to-r from-blue-600 to-teal-700 text-white p-4 w-4/5 md:w-auto shadow-lg rounded-lg animate-fade-in-down" : "hidden"} md:space-x-12 capitalize`} >
-        {[{ path: "/", label: "Home" }, { path: "/about", label: "About" }, { path: "/review", label: "Feedback" }, { path: "/gallery", label: "Gallery" }, { path: "/contact", label: "Contact" }].map(({ path, label }) => (
+        {[{ path: "/", label: "Home" }, 
+        { path: "/about", label: "About" },
+        { path: "/events", label: "Our Events" },
+        // { path: "/gallery", label: "Gallery" }, 
+        { path: "/contact", label: "Contact" }].map(({ path, label }) => (
           <li key={path}className="cursor-pointer capitalize font-medium text-white transition-all duration-300 ease-in-out hover:text-pink-500 hover:scale-110 hover:translate-x-2 hover:bg-gray-800 px-3 py-2 rounded-lg" onClick={handleLinkClick}>
             <Link to={path}>{label}</Link>
           </li>
