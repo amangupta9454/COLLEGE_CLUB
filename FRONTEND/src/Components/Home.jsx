@@ -16,9 +16,7 @@ import hietlogo from "../assets/hietlogo.png";
 
 const Home = () => {
   const typedRef = useRef(null);
-  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isOpen, setIsOpen] = useState(false);
-  // const [cursorVariant, setCursorVariant] = useState("default");
   const [hoveredLetter, setHoveredLetter] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
 
@@ -105,7 +103,7 @@ const Home = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
@@ -210,216 +208,208 @@ const Home = () => {
 
   return (
     <>
-
-      <div className="min-h-screen  bg-gradient-to-br from-gray-950 via-slate-900 to-black text-white overflow-x-hidden relative selection:bg-cyan-500/20">
+      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-slate-900 to-black text-white overflow-x-hidden relative selection:bg-cyan-500/20">
         
-        {/* Hero Section Rain Particles */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/98 via-gray-900/95 to-black/98"></div>
+        {/* Hero Section with Enhanced UI, Animations, and Responsiveness */}
+        <section className="relative min-h-[70vh] sm:min-h-[60vh] lg:min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+          {/* Background Gradient and Particles */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-slate-800/90 to-gray-900/95"></div>
           
-          {/* Hero Rain Particles */}
-          {Array.from({ length: 100 }).map((_, i) => (
+          {/* Enhanced Rain Particles */}
+          {Array.from({ length: 80 }).map((_, i) => (
             <div
               key={`hero-rain-${i}`}
-              className="absolute w-0.5 h-2 bg-gradient-to-b from-cyan-400/60 to-transparent rounded-full"
+              className="absolute w-0.5 h-3 bg-gradient-to-b from-cyan-400/70 to-transparent rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 animationName: 'rainFall',
                 animationDuration: `${2 + Math.random() * 3}s`,
                 animationDelay: `${Math.random() * 5}s`,
                 animationIterationCount: 'infinite',
-                animationTimingFunction: 'linear'
+                animationTimingFunction: 'ease-out'
               }}
             />
           ))}
 
-          {/* Floating Code Elements */}
-          {Array.from({ length: 15 }).map((_, i) => (
+          {/* Floating Code Elements with Subtle Glow */}
+          {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={`code-${i}`}
-              className="absolute text-cyan-400/20 font-mono text-sm select-none"
+              className="absolute text-cyan-400/30 font-mono text-xs sm:text-sm select-none"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animation: `codeFloat ${8 + Math.random() * 4}s ease-in-out infinite`,
+                animation: `codeFloat ${6 + Math.random() * 4}s ease-in-out infinite`,
                 animationDelay: `${Math.random() * 5}s`,
-                transform: `rotate(${Math.random() * 360}deg)`
+                transform: `rotate(${Math.random() * 360}deg)`,
+                filter: 'drop-shadow(0 0 8px rgba(6, 182, 212, 0.3))'
               }}
             >
               {['</>', '{}', '[]', '()', '<html>', 'AI', 'ML', 'API', 'CSS', 'JS', 'React', 'Node'][Math.floor(Math.random() * 12)]}
             </div>
           ))}
 
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-5">
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: `
-                linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
+                linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px)
               `,
-              backgroundSize: '40px 40px',
-              animation: 'gridMove 25s linear infinite'
+              backgroundSize: '30px 30px',
+              animation: 'gridMove 20s linear infinite'
             }}></div>
           </div>
-        </div>
 
-        {/* Hero Section */}
-        <section className="relative min-h-screen md:min-h-[30vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/30 to-slate-950/60"></div>
-          
-          <div className="relative z-0 max-w-6xl mx-auto text-center space-y-8 lg:space-y-12 pt-24">
-            <div className="space-y-6 lg:space-y-8">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/40 backdrop-blur-md">
-                  <FaBolt className="text-yellow-400 text-sm animate-pulse" />
-                  <span className="text-sm font-bold text-cyan-300 tracking-wider">TECH FUSION 2025</span>
-                </div>
+          <div className="relative z-0 max-w-5xl mx-auto text-center space-y-6 sm:space-y-8 lg:space-y-10 pt-16 sm:pt-20">
+            {/* Tech Fusion Badge */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-cyan-600/30 to-purple-600/30 rounded-full border border-cyan-500/50 backdrop-blur-md transform transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30">
+                <FaBolt className="text-yellow-400 text-sm sm:text-base animate-pulse" />
+                <span className="text-xs sm:text-sm font-bold text-cyan-200 tracking-wider">TECH FUSION 2025</span>
               </div>
-
-              <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight">
-                  <div className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-2xl mb-4">
-                    {renderAnimatedText("WELCOME TO", "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600", 0)}
-                  </div>
-                  <div className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 drop-shadow-2xl">
-                    {renderAnimatedText("TECH FUSION", "text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500", 11)}
-                  </div>
-                </h1>
-              </div>
-              
-              <div className="h-16 sm:h-20 lg:h-24 flex items-center justify-center">
-                <p 
-                  ref={typedRef} 
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 min-h-[50px] drop-shadow-lg"
-                />
-              </div>
-
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto font-medium">
-                Elite technical society fostering <span className="text-cyan-400 font-bold">innovation</span>, 
-                building <span className="text-purple-400 font-bold">future leaders</span>, and 
-                creating <span className="text-emerald-400 font-bold">tech excellence</span>.
-              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center p-8">
+            {/* Main Heading with Animated Text */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight">
+              <div className="block mb-2 sm:mb-3">
+                {renderAnimatedText("WELCOME TO", "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600", 0)}
+              </div>
+              <div className="block">
+                {renderAnimatedText("TECH FUSION", "text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500", 11)}
+              </div>
+            </h1>
+
+            {/* Typed Animation */}
+            <div className="h-12 sm:h-14 lg:h-16 flex items-center justify-center">
+              <p 
+                ref={typedRef} 
+                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 drop-shadow-lg animate-pulse"
+              />
+            </div>
+
+            {/* Description with Gradient Highlights */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto font-medium">
+              Join an elite technical society driving <span className="text-cyan-400 font-bold">innovation</span>, 
+              shaping <span className="text-purple-400 font-bold">future leaders</span>, and 
+              creating <span className="text-emerald-400 font-bold">tech excellence</span>.
+            </p>
+
+            {/* Call to Action Button */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4 sm:pt-6">
               <button 
-                className="group relative px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-2xl font-bold text-lg sm:text-xl lg:text-2xl overflow-hidden transform transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/40 border-2 border-cyan-400/60 hover:border-cyan-300"
-                // onMouseEnter={() => setCursorVariant('hover')}
-                // onMouseLeave={() => setCursorVariant('default')}
+                className="group relative px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 rounded-xl font-bold text-base sm:text-lg lg:text-xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/40 border-2 border-cyan-400/60 hover:border-purple-400/60"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <span className="relative z-0 flex items-center gap-3">
-                  <FaRocket className="text-xl lg:text-2xl" />
+                <span className="relative z-0 flex items-center gap-2 sm:gap-3">
+                  <FaRocket className="text-lg sm:text-xl" />
                   Join the Revolution
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </button>
-
-              
             </div>
           </div>
         </section>
 
         {/* Team Section with Enhanced Spacing and Particles */}
-        <section className="relative py-32 sm:py-36 lg:py-40 px-4 sm:px-6 lg:px-8 mt-16">
-          {/* Team Section Particles */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-950/95 via-gray-900/90 to-black/95"></div>
-            
-            {Array.from({ length: 80 }).map((_, i) => (
-              <div
-                key={`team-rain-${i}`}
-                className="absolute w-0.5 h-3 bg-gradient-to-b from-purple-400/40 to-transparent rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationName: 'diagonalRain',
-                  animationDuration: `${3 + Math.random() * 4}s`,
-                  animationDelay: `${Math.random() * 6}s`,
-                  animationIterationCount: 'infinite',
-                  animationTimingFunction: 'linear'
-                }}
-              />
-            ))}
-          </div>
-          
-          <div className="relative z-0 max-w-7xl mx-auto">
-            <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-              <div className="flex justify-center mb-8">
-                <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/40 backdrop-blur-md">
-                  <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-bold text-purple-300 tracking-wider">OUR ELITE TEAM</span>
+      <section className="relative py-16 sm:py-20 lg:py-24 px-2 sm:px-4 lg:px-6 mt-8 mb-8">
+  {/* Team Section Particles */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/95 via-slate-800/90 to-gray-900/95"></div>
+    
+    {Array.from({ length: 60 }).map((_, i) => (
+      <div
+        key={`team-rain-${i}`}
+        className="absolute w-0.5 h-2 bg-gradient-to-b from-teal-400/50 to-transparent rounded-full"
+        style={{
+          left: `${Math.random() * 100}%`,
+          animationName: 'diagonalRain',
+          animationDuration: `${2 + Math.random() * 3}s`,
+          animationDelay: `${Math.random() * 4}s`,
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
+        }}
+      />
+    ))}
+  </div>
+  
+  <div className="relative z-0 max-w-6xl mx-auto">
+    <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+      <div className="flex justify-center mb-4">
+        <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-500/20 to-blue-500/20 rounded-full border border-teal-500/40 backdrop-blur-md">
+          <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+          <span className="text-xs font-bold text-teal-200 tracking-wider">OUR VISIONARY TEAM</span>
+        </div>
+      </div>
+      
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-500 drop-shadow-xl">
+          Tech Pioneers &
+        </span>
+        <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-teal-500 to-blue-500 drop-shadow-xl">
+          Visionaries
+        </span>
+      </h2>
+      
+      <div className="w-24 h-1 bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 mx-auto rounded-full"></div>
+    </div>
+
+    <div className="relative">
+      <Slider {...sliderSettings}>
+        {teamMembers.map((member, index) => (
+          <div key={member.id} className="px-1 sm:px-2 lg:px-4">
+            <div 
+              className="group relative bg-gradient-to-br from-slate-800/95 via-gray-900/95 to-slate-800/95 backdrop-blur-xl border border-gray-700/60 rounded-2xl p-6 sm:p-8 text-center transform transition-all duration-700 hover:scale-105 hover:border-teal-400/80 hover:shadow-xl hover:shadow-teal-500/30 mx-1 my-4 hover:my-6"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Enhanced Background Glow */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-teal-500/15 via-blue-500/15 to-indigo-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              
+              <div className="relative">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-6 sm:mb-8 rounded-xl overflow-hidden border-2 border-transparent bg-gradient-to-br from-teal-400 via-blue-500 to-indigo-500 p-0 transform transition-all duration-700 group-hover:scale-110 group-hover:rotate-2">
+                  <div className="w-full h-full rounded-lg overflow-hidden bg-gray-800">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-teal-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
+                </div>
+                
+                <div className="space-y-2 sm:space-y-3">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-teal-400 group-hover:to-blue-500 transition-all duration-500 drop-shadow-md">
+                    {member.name}
+                  </h3>
+                  
+                  <div className="space-y-1 sm:space-y-2">
+                    <p className="text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">
+                      {member.designation}
+                    </p>
+                    <p className="text-xs sm:text-sm text-gray-300 group-hover:text-teal-200 transition-colors duration-400">
+                      {member.specialty}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-4 sm:mt-6">
+                  <a 
+                    href={member.linkedin}
+                    className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 rounded-full font-bold text-white text-xs sm:text-sm transform transition-all duration-500 hover:scale-110 hover:shadow-md hover:shadow-teal-500/50 border border-teal-400/40 hover:border-blue-400/60"
+                  >
+                    <FaLinkedin className="text-xs sm:text-base" />
+                    Connect
+                  </a>
                 </div>
               </div>
-              
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-10 leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 drop-shadow-2xl">
-                  Tech Leaders &
-                </span>
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 drop-shadow-2xl">
-                  Innovators
-                </span>
-              </h2>
-              
-              <div className="w-32 h-2 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div className="relative">
-              <Slider {...sliderSettings}>
-                {teamMembers.map((member, index) => (
-                  <div key={member.id} className="px-2 sm:px-4 lg:px-6">
-                    <div 
-                      className="group relative bg-gradient-to-br from-gray-950/95 via-slate-900/95 to-gray-950/95 backdrop-blur-xl border border-gray-800/60 rounded-3xl p-8 sm:p-10 text-center transform transition-all duration-1000 hover:scale-105 hover:border-cyan-400/80 hover:shadow-2xl hover:shadow-cyan-500/30  mx-2"
-                      style={{ animationDelay: `${index * 150}ms` }}
-                      
-                    >
-                      {/* Enhanced Background Glow */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-                      
-                      <div className="relative">
-                        <div className="relative w-28 h-28 sm:w-36 sm:h-36 lg:w-44 lg:h-44 mx-auto mb-10 sm:mb-10 rounded-2xl overflow-hidden border-2 border-transparent bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 p-0 transform transition-all duration-1000 group-hover:scale-110 group-hover:rotate-3">
-                          <div className="w-full h-full rounded-xl overflow-hidden bg-gray-900">
-                            <img 
-                              src={member.image} 
-                              alt={member.name} 
-                              className="w-full h-full object-cover transform transition-all duration-1000 group-hover:scale-110"
-                            />
-                          </div>
-                          <div className="absolute inset-0 bg-gradient-to-t from-purple-600/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl"></div>
-                        </div>
-                        
-                        <div className="space-y-3 sm:space-y-4">
-                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 transition-all duration-700 drop-shadow-lg">
-                            {member.name}
-                          </h3>
-                          
-                          <div className="space-y-1 sm:space-y-2">
-                            <p className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                              {member.designation}
-                            </p>
-                            <p className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-500">
-                              {member.specialty}
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="mt-6 sm:mt-8">
-                          <a 
-                            href={member.linkedin}
-                            className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full font-bold text-white text-sm sm:text-base transform transition-all duration-700 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 border border-blue-400/40 hover:border-purple-400/60"
-                          >
-                            <FaLinkedin className="text-sm sm:text-lg" />
-                            Connect
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </Slider>
             </div>
           </div>
-        </section>
+        ))}
+      </Slider>
+    </div>
+  </div>
+</section>
 
         {/* Enhanced What We Do Section */}
         <section id="discover" className="relative py-14 sm:py-14 lg:py-14 px-4 sm:px-6 lg:px-8">
@@ -615,7 +605,7 @@ const Home = () => {
                   {[
                     { icon: FaYoutube, href: "https://www.youtube.com/@HiTechCollege", color: "hover:text-red-500 hover:shadow-red-500/30" },
                     { icon: FaWhatsapp, href: "https://wa.me/9651585712", color: "hover:text-green-500 hover:shadow-green-500/30" },
-                    { icon: FaLinkedin, href: "https://www.linkedin.com/amangupta9454", color: "hover:text-blue-500 hover:shadow-blue-500/30" },
+                    { icon: FaLinkedin, href: "https://www.linkedin.com/in/amangupta9454/", color: "hover:text-blue-500 hover:shadow-blue-500/30" },
                     { icon: FaInstagram, href: "https://www.instagram.com/gupta_aman_9161", color: "hover:text-pink-500 hover:shadow-pink-500/30" },
                     { icon: FaEnvelope, href: "mailto:ag0567688@gmail.com", color: "hover:text-yellow-500 hover:shadow-yellow-500/30" }
                   // eslint-disable-next-line no-unused-vars
@@ -638,7 +628,7 @@ const Home = () => {
                   Quick Links
                 </h4>
                 <ul className="space-y-4">
-                  {['Home', 'About Us', 'Projects', 'Events', 'Contact'].map((item) => (
+                  {[ 'About', 'Events', 'Contact'].map((item) => (
                     <li key={item}>
                       <a 
                         href={`/${item.toLowerCase().replace(' ', '-')}`}
